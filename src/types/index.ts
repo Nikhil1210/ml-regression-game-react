@@ -24,7 +24,7 @@ export interface ILearnData {
 }
 export interface ITestData {
     Input : number;
-    Output : number;
+    Actual : number;
     Prediction : number;
 }
 export enum ALGORITHMS {
