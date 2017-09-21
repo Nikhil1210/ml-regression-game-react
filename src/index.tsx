@@ -3,7 +3,10 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-
+import 'bootstrap/dist/css/bootstrap-theme.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-highcharts';
+import 'font-awesome/css/font-awesome.css';
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement
