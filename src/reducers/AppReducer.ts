@@ -8,6 +8,7 @@ import {
     GET_LEARN_DATA,
     LEARN_MODEL
 } from "../actions/index";
+import {GetLearnData, GetTestData, GetModel} from "../services/AppService";
 
 export interface IAppState {
     learnData : ILearnDataOutput;

@@ -1,6 +1,10 @@
+export interface ILearnDataOutput {
+    data : ILearnData[];
+    algorithim : ALGORITHMS;
+}
 export interface IAppProps {
     app : {
-        learnData: IlearnDataOutput,
+        learnData: ILearnDataOutput,
         testData: ITestData[],
         userSelAlgorithm: ALGORITHMS,
         model?: any,
@@ -33,10 +37,6 @@ export enum ALGORITHMS {
     Polynomial,
     Exponential,
     Logaritmic
-}
-export interface ILearnDataOutput {
-    data : ILearnData[];
-    algorithim : ALGORITHMS;
 }
 
 export interface HighchartSeries {

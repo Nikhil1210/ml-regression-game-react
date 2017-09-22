@@ -8,8 +8,6 @@ export type AppAction = {
     type: '@@APP/LEARN_MODEL',
     algorithm: ALGORITHMS
 } | {
-    type: '@@APP/IS_MODEL_LEARNED'
-} | {
     type: '@@APP/ON_INITIALIZE'
 } | {
     type: '@@APP/IS_MODEL_LEARNED',

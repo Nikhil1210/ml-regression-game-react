@@ -50,6 +50,7 @@ export function GetTestData(learnDataAlgorithm : ALGORITHMS, model : any) : ITes
             Prediction: model.predict(index)[1]
         });
     }
+    return testData;
 }
 function ApplyCustomEquation(input : number, algorithm : ALGORITHMS) : number {
     switch(algorithm) {
