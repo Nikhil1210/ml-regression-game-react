@@ -1,0 +1,42 @@
+.three-cogs {
+    position: relative;
+}
+
+.three-cogs>.fa-cog {
+    color: rgb(80, 80, 80);
+    text-shadow: 0 0 2px lightgray, 0 0 3px lightgray, 00 4px lightgray, -2px -2px 2px lightgray, 0 0 6px lightgray;
+}
+
+.three-cogs>.fa:nth-child(1) {
+    animation-duration: 4s;
+}
+
+.three-cogs>.fa:nth-child(2),
+.three-cogs>.fa:nth-child(3) {
+    position: absolute;
+    top: -0.5em;
+    right: -0.55em;
+    animation-direction: reverse;
+    animation-duration: 2s;
+}
+
+.three-cogs>.fa:nth-child(3) {
+    top: auto;
+    bottom: -0.2em;
+}
+
+.intro-page {
+    color: #ccc;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+img {
+    opacity: 0.9;
+}

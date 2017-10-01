@@ -6,7 +6,9 @@ import './App.css';
 import {IAppProps, IAppDispatch, ALGORITHMS} from '../../types/index';
 import {IAppReducer} from '../../reducers/index';
 import {LearnData, LearnModel, TestData, InitializeGame, IsModelLearned} from '../../actions/index';
-
+import Intro from '../Intro/Intro';
+import Learn from '../Learn/Learn';
+import Validate from '../Validate/Validate';
 const mapStateToProps = (state : IAppReducer, ownProps : {}) : IAppProps => ({app: state.app});
 const containerStyle = {
   height: '100vh',
@@ -26,22 +28,43 @@ class AppComponent extends React.Component < IAppProps & IAppDispatch & {}, {} >
   }
 
   render() {
+    const {
+      app,
+      onGetLearnData,
+      onGetTestData,
+      onLearnModel,
+      onIsModelLearnt,
+      onInitializeData
+    } = this.props;
     return (
       <div >
-        <Carousel allowFullScreen={true} pauseOnHover={true} height={900}>
+        <Carousel allowFullScreen={true} pauseOnHover={true}>
           <Carousel.Item style={containerStyle}>
-            hello
-            <Carousel className="Caption">
-              <ControlLabel>
-                inside caption
+            <Intro onInitialize={onInitializeData}/>
+            <Carousel.Caption className="Caption">
+              <ControlLabel style={{
+                color: 'yellow'
+              }}>
+                Your task is to create a model with high accuracy
               </ControlLabel>
-            </Carousel>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item style={containerStyle}>
-            hello2
+            <Learn
+              onGetLearnData={onGetLearnData}
+              learnData={app.learnData}
+              isModelLearned={app.isModelLearned}
+              userSelAlgorithm={app.userSelAlgorithm}
+              onLearnModel={onLearnModel}
+              onIsModelLearnt={onIsModelLearnt}/>
           </Carousel.Item>
           <Carousel.Item style={containerStyle}>
-            hello3
+            <Validate
+              userAlgorithm={app.userSelAlgorithm}
+              testData={app.testData}
+              onGetTestData={onGetTestData}
+              dataAlgorithms={app.learnData.algorithim}
+              model={app.model}/>
           </Carousel.Item>
         </Carousel>
       </div>
